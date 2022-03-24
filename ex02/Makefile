@@ -6,10 +6,10 @@ OBJ = $(SRCS:.cpp=.o)
 RM = rm -f
 NAME = manipulator
 
-%.o: %.cpp Point.hpp Manipulator.hpp
+%.o: %.cpp 
 	$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME): $(OBJ) 
+$(NAME): $(OBJ) Point.hpp Manipulator.hpp
 	$(CC) -o $(NAME) $(OBJ)
 
 all: $(NAME)

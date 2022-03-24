@@ -56,9 +56,15 @@ class Point
 			return sqrt(dx * dx + dy * dy);
 		};
 
-		friend std::istream& operator >>(std::istream &in, Point& P)
+		friend std::istream& operator>>(std::istream &in, Point P)
 		{
 			in >> P._x >> P._y;
 			return in;
+		}
+
+		friend std::ostream& operator<<(std::ostream &out, Point P)
+		{
+			out << "{" << P._x << ";" << P._y << "}";
+			return out;
 		}
 };

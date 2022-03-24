@@ -6,10 +6,10 @@ OBJ = $(SRCS:.cpp=.o)
 RM = rm -f
 NAME = gcode
 
-%.o: %.cpp Coordinate.hpp
+%.o: %.cpp 
 	$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Coordinate.hpp
 	$(CC) -o $(NAME) $(OBJ)
 
 all: $(NAME)

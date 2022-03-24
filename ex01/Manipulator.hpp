@@ -80,16 +80,15 @@ class Manipulator
             return *this;
         };
 
-        friend std::ostream& operator<<(std::ostream &out, Manipulator const& M)
+        friend std::ostream& operator<<(std::ostream &out, Manipulator& M)
         {
-            out << "Manipulator " << M.getName() << "\nlocation: {" << M.getLocation().getX() << ";" << M.getLocation().getY() << "}, action radius: " << M.getRadius();
+            out << "Manipulator " << M.getName() << "\nlocation: " << M.getLocation() << ", action radius: " << M.getRadius();
             return out;
         };
 
         friend std::istream& operator>>(std::istream &in, Manipulator& M)
         {
             in >> M._location >> M._R;
-            in.ignore(1);
             in >> M._name;
             return in;
         };

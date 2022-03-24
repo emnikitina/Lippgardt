@@ -92,7 +92,7 @@ class Manipulator
 
         friend std::ostream& operator<<(std::ostream &out, Manipulator& M)
         {
-            out << "Manipulator " << M.getName() << "\nlocation: {" << M.getLocation().getX() << ";" << M.getLocation().getY() << "}, action radius: " << M.getRadius();
+            out << "Manipulator " << M.getName() << "\nlocation: " << M.getLocation() << ", action radius: " << M.getRadius();
             out << "\nPoints [";
             for (typename std::vector<Point<T> >::iterator it = M._goals.begin(); it != M._goals.end(); it++)
                 out << " {" << it->getX() << ";" << it->getY() << "}";

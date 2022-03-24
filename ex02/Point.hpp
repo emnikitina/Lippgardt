@@ -11,11 +11,11 @@ class Point
 		T _y;
 
 	public:
-		Point() : _x(0), _y(0) {}
+		Point() : _x(0), _y(0) {};
 
-		Point(T x, T y) : _x(x), _y(y) {}
+		Point(T x, T y) : _x(x), _y(y) {};
 
-		Point(Point const& copy): _x(copy._x), _y(copy._y) {}
+		Point(Point const& copy): _x(copy._x), _y(copy._y) {};
 
 		Point& operator =(Point const& source)
 		{
@@ -60,5 +60,11 @@ class Point
 		{
 			in >> P._x >> P._y;
 			return in;
-		}
+		};
+
+		friend std::ostream& operator<<(std::ostream &out, Point P)
+		{
+			out << "{" << P._x << ";" << P._y << "}";
+			return out;
+		};
 };
